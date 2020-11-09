@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base_in.css">
+    <link rel="stylesheet" href="css/animation.css">
+
+</head>
+<body>
+<div class="title">跳蚤市场 <span class="agin title_small">刷新</span><span class="title_small search">搜索</span></div>
+
+<div style="text-align: center ; opacity:0; animation: 2s shan alternate 3;">点击数据查看详情</div>
+<ul class="table">
+    <li class="table_li"><span>id</span><span>出售人学号</span><span>出售人姓名</span><span>物品</span><span>上架时间</span><span>图片</span><span>报价</span><span>领取方式</span></li>
+</ul>
+<!--分页跳转-->
+<div class="paging">
+    <input type="button" value="上一页" class="pagup input_btn_page">
+    <div class="pagnum"><span class="nowpage">1</span>/<span class="allpage">1</span></div>
+    <input type="button" value="下一页" class="pagnext input_btn_page">
+</div>
+<!--弹框遮罩-->
+<div class="tan"></div>
+<!--弹出图片-->
+<div class="tan_img tan_kuang"></div>
+<!--弹出搜索框-->
+<div class="tan_search tan_kuang">
+    <div class="title">内容搜索</div>
+    <div>
+        <span class="type">搜索类型</span>
+        <select name="" id="lei" class="value">
+            <option value="sno">出售人</option>
+            <option value="deta">物品</option>
+            <option value="time">时间</option>
+        </select>
+    </div>
+    <div>
+        <span class="type">搜索字段</span>
+        <input type="text" name="" id="how" class="value"> </input>
+    </div>
+    <div>
+        <input type="button" value="搜索" class="input_btn_small btn_red gosearch">
+        <input type="button" value="返回" class="input_btn_small btn_gre close">
+    </div>
+</div>
+<!--弹出内容详情，-->
+<div class="tan_content tan_kuang">
+    <div class="title">信息管理</div>
+    <div>
+        <span class="type">id</span>
+        <input type="text" class="value" id="id" disabled>
+    </div>
+    <div>
+        <span class="type">出售人学号</span>
+        <input type="text" class="value" id="sno" disabled>
+    </div>
+    <div>
+        <span class="type">出售人姓名</span>
+        <input type="text" class="value" id="sname" disabled>
+    </div>
+    <div>
+        <span class="type">物品</span>
+        <input type="text" class="value" id="deta">
+    </div>
+    <div>
+        <span class="type">上架时间</span>
+        <input type="text" class="value" id="time">
+    </div>
+    <div>
+        <span class="type">图片</span>
+        <input type="button" title="" class="value value_img" id="photo">
+    </div>
+    <div>
+        <span class="type">报价</span>
+        <input type="text" class="value" id="price">
+    </div>
+    <div>
+        <span class="type">领取方式</span>
+        <input type="text" class="value" id="getadd">
+    </div>
+
+    <div>
+<!--        <input type="button" value="删除" class="input_btn_small btn_red delete">-->
+        <input type="button" value="修改" class="input_btn_small btn_ff7 change">
+        <input type="button" value="返回" class="input_btn_small btn_blu close">
+    </div>
+</div>
+</body>
+
+<script src="js/lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/base.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/base_in.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+    getMarkes()
+    /*修改*/
+    $(".change").click(function () { var i=confirm("确定修改？")
+        if (i) modifyMarke() })
+    /*点击搜索动作*/
+    $(".gosearch").click(function () {
+        searchMarkes();
+    })
+    $("#how").keydown(function(event) {
+        if (event.keyCode == 13) {
+            searchMarkes();
+        }
+    })
+    // setInterval(function () {
+    //     getAdmins()
+    // },10000)
+</script>
+</html>

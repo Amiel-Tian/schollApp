@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base_in.css">
+    <link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+<div class="title">管理员列表 <span class="agin title_small">刷新</span><span class="title_small search">搜索</span></div>
+
+<div style="text-align: center ; opacity:0; animation: 2s shan alternate 3;">点击数据查看详情</div>
+<ul class="table">
+    <li class="table_li"><span>id</span><span>用户名</span><span>密码</span><span>身份</span></li>
+</ul>
+<!--分页跳转-->
+<div class="paging">
+    <input type="button" value="上一页" class="pagup input_btn_page">
+    <div class="pagnum"><span class="nowpage">1</span>/<span class="allpage">1</span></div>
+    <input type="button" value="下一页" class="pagnext input_btn_page">
+</div>
+<!--弹框遮罩-->
+<div class="tan"></div>
+<!--弹出搜索框-->
+<div class="tan_search tan_kuang">
+    <div class="title">内容搜索</div>
+    <div>
+        <span class="type">搜索类型</span>
+        <select name="" id="lei" class="value">
+            <option value="id">id</option>
+            <option value="user">用户名</option>
+            <option value="power">权限</option>
+        </select>
+    </div>
+    <div>
+        <span class="type">搜索字段</span>
+        <input type="text" name="" id="how" class="value"> </input>
+    </div>
+    <div>
+        <input type="button" value="搜索" class="input_btn_small btn_red gosearch">
+        <input type="button" value="返回" class="input_btn_small btn_gre close">
+    </div>
+</div>
+<!--弹出内容详情，-->
+<div class="tan_content tan_kuang">
+    <div class="title">信息管理</div>
+    <div>
+        <span class="type">id</span>
+        <input type="text" class="value" id="id" disabled>
+    </div>
+    <div>
+        <span class="type">用户名</span>
+        <input type="text" class="value" id="sno">
+    </div>
+    <div>
+        <span class="type">密码</span>
+        <input type="text" class="value" id="time">
+    </div>
+    <div>
+        <span class="type">身份</span>
+        <input type="text" class="value" id="add">
+    </div>
+    <div>
+<!--        <input type="button" value="删除" class="input_btn_small btn_red delete">-->
+        <input type="button" value="修改" class="input_btn_small btn_ff7 change">
+        <input type="button" value="返回" class="input_btn_small btn_blu close">
+    </div>
+</div>
+</body>
+
+<script src="js/lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/base.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/base_in.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    getAdmins()
+    /*点击搜索动作*/
+    $(".gosearch").click(function () {
+        searchAdmin();
+    })
+    $("#how").keydown(function(event) {
+        if (event.keyCode == 13) {
+            searchAdmin();
+        }
+    })
+</script>
+</html>

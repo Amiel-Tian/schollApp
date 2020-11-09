@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base_in.css">
+    <link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+    <div class="title">用户管理 <span class="agin title_small">刷新</span><span class="title_small search">搜索</span></div>
+    <!--    表格-->
+    <div style="text-align: center ; opacity:0; animation: 2s shan alternate 3;">点击数据查看详情</div>
+    <ul class="table">
+        <li class="table_li"><span>id</span><span>学号/工号</span><span>姓名</span><span>身份</span><span>入学时间</span><span>专业</span><span>院系</span><span>学院</span></li>
+    </ul>
+
+    <!--分页跳转-->
+    <div class="paging">
+        <input type="button" value="上一页" class="pagup input_btn_page">
+        <div class="pagnum"><span class="nowpage">1</span>/<span class="allpage">1</span></div>
+        <input type="button" value="下一页" class="pagnext input_btn_page">
+    </div>
+
+    <!--弹框遮罩-->
+    <div class="tan"></div>
+    <!--弹出搜索框-->
+    <div class="tan_search tan_kuang">
+        <div class="title">内容搜索</div>
+        <div>
+            <span class="type">搜索类型</span>
+            <select name="" id="lei" class="value">
+                <option value="sno">学号</option>
+                <option value="sname">姓名</option>
+                <option value="school">学院</option>
+            </select>
+        </div>
+        <div>
+            <span class="type">搜索字段</span>
+            <input type="text" name="" id="how" class="value"> </input>
+        </div>
+        <div>
+            <input type="button" value="搜索" class="input_btn_small btn_red gosearch">
+            <input type="button" value="返回" class="input_btn_small btn_gre close">
+        </div>
+    </div>
+    <!--弹出内容详情，-->
+    <div class="tan_content tan_kuang">
+        <div class="title">信息管理</div>
+        <div>
+            <span class="type">id</span>
+            <input type="text" class="value" id="id" disabled>
+        </div>
+        <div>
+            <span class="type">学号/工号</span>
+            <input type="text" class="value" id="sno">
+        </div>
+        <div>
+            <span class="type">姓名</span>
+            <input type="text" class="value" id="sname">
+        </div>
+        <div>
+            <span class="type">身份</span>
+            <input type="text" class="value" id="type">
+        </div>
+        <div>
+            <span class="type">入学年份</span>
+            <input type="text" class="value" id="syear">
+        </div>
+        <div>
+            <span class="type">专业</span>
+            <input type="text" class="value" id="zhuanye">
+        </div>
+        <div>
+            <span class="type">院系</span>
+            <input type="text" class="value" id="yuanxi">
+        </div>
+        <div>
+            <span class="type">学校</span>
+            <input type="text" class="value" id="school">
+        </div>
+        <div>
+            <input type="button" value="修改" class="input_btn_small btn_ff7 change">
+            <input type="button" value="返回" class="input_btn_small btn_blu close">
+        </div>
+    </div>
+</body>
+
+<script src="js/lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/base.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/base_in.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+    getUsers();
+    /*修改*/
+    $(".change").click(function () {
+        var i=confirm("确定修改？")
+        if (i) modifyUser()
+    })
+    /*点击搜索动作*/
+    $(".gosearch").click(function () {
+        searchUser();
+    })
+    $("#how").keydown(function(event) {
+        if (event.keyCode == 13) {
+            searchUser();
+        }
+    })
+
+</script>
+</html>

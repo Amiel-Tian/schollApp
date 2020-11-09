@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base_in.css">
+    <link rel="stylesheet" href="css/animation.css">
+
+</head>
+<body>
+<div class="title">新闻列表 <span class="agin title_small">刷新</span><span class="title_small search">搜索</span><span class="title_small build">新建</span></div>
+
+<div style="text-align: center ; opacity:0; animation: 2s shan alternate 3;">点击数据查看详情</div>
+<ul class="table">
+    <li class="table_li"><span>id</span><span>类型</span><span>时间</span><span>标题</span><span>内容</span></li>
+</ul>
+<!--分页跳转-->
+<div class="paging">
+    <input type="button" value="上一页" class="pagup input_btn_page">
+    <div class="pagnum"><span class="nowpage">1</span>/<span class="allpage">1</span></div>
+    <input type="button" value="下一页" class="pagnext input_btn_page">
+</div>
+<!--弹框遮罩-->
+<div class="tan"></div>
+<!--弹出搜索框-->
+<div class="tan_search tan_kuang">
+    <div class="title">内容搜索</div>
+    <div>
+        <span class="type">搜索类型</span>
+        <select name="" id="lei" class="value">
+            <option value="type">类型</option>
+            <option value="time">时间</option>
+            <option value="title">标题</option>
+        </select>
+    </div>
+    <div>
+        <span class="type">搜索字段</span>
+        <input type="text" name="" id="how" class="value"> </input>
+    </div>
+    <div>
+        <input type="button" value="搜索" class="input_btn_small btn_red gosearch">
+        <input type="button" value="返回" class="input_btn_small btn_gre close">
+    </div>
+</div>
+<!--弹出内容详情，-->
+<div class="tan_content tan_kuang">
+    <div class="title">信息管理</div>
+    <div>
+        <span class="type">id</span>
+        <input type="text" class="value" id="id" disabled>
+    </div>
+    <div>
+        <span class="type">类型</span>
+        <input type="text" class="value" id="type">
+    </div>
+    <div>
+        <span class="type">时间</span>
+        <input type="text" class="value" id="time">
+    </div>
+    <div>
+        <span class="type">标题</span>
+        <input type="text" class="value" id="titles">
+    </div>
+    <div>
+        <span class="type">内容</span>
+<!--        <input type="text" class="value" id="content">-->
+        <textarea name="" class="value" id="content" cols="30" rows="10" style="height: 150px"></textarea>
+    </div>
+    <div>
+<!--        <input type="button" value="删除" class="input_btn_small btn_red delete">-->
+        <input type="button" value="修改" class="input_btn_small btn_ff7 change">
+        <input type="button" value="返回" class="input_btn_small btn_blu close">
+    </div>
+</div>
+<!--弹出新建新闻，-->
+<div class="tan_build tan_kuang">
+    <div class="title">创建新闻</div>
+    <div>
+        <span class="type">类型</span>
+        <input type="text" class="value" id="ntype">
+    </div>
+    <div>
+        <span class="type">标题</span>
+        <input type="text" class="value" id="ntitle">
+    </div>
+    <div>
+        <span class="type">内容</span>
+<!--        <input type="text" class="value" id="content">-->
+        <textarea name="" class="value" id="ncontent" cols="30" rows="10" style="height: 250px"></textarea>
+    </div>
+    <div>
+        <input type="button" value="新建" class="input_btn_small btn_red gobuild">
+        <input type="button" value="返回" class="input_btn_small btn_gre close">
+    </div>
+</div>
+
+<div class="id_img_wp">
+<!--    <input type="file" accept="image/png,image/jpeg" value="" id="img_z"/>-->
+</div>
+<!--<img src="http://wuqiu.vaiwan.com/img.jpg" alt="">&ndash;&gt;-->
+</body>
+
+<script src="js/lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/base.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/base_in.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+    getNews()
+    /*点击修改*/
+    $(".change").click(function () { modifyNew() })
+    /*点击新建*/
+    $(".gobuild").click(function () { addNew() })
+    /*点击搜索动作*/
+    $(".gosearch").click(function () {
+        searchNews();
+    })
+    $("#how").keydown(function(event) {
+        if (event.keyCode == 13) {
+            searchNews();
+        }
+    })
+    upload("uploadNewImg");/*给上传图片的按钮添加事件*/
+    // setInterval(function () {
+    //     getAdmins()
+    // },10000)
+
+</script>
+</html>

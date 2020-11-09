@@ -1,0 +1,155 @@
+body{
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.title{
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px #e6e6e6 solid;
+}
+/*标题小字*/
+.title_small{
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    color: #7f7f7f;
+    margin-right: 20px;
+    text-decoration: underline;
+}
+/*表格样式*/
+.table{
+    width: 80%;
+    margin: auto;
+    padding-top:20px;
+    text-align: center;
+    font-size: 12px;
+}
+.table .table_li{
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px #e6e6e6 solid;
+    border-left: 1px #e6e6e6 solid;
+}
+.table .table_li span{
+    flex: 1;
+    border-bottom: 1px #e6e6e6 solid;
+    border-right: 1px #e6e6e6 solid;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    padding: 0 5px;
+
+}
+.table .table_li span:first-child{
+    flex: 0.5;
+}
+.table .table_li:first-child{
+    pointer-events: none;
+    background: #f2f2f2;
+}
+.table .table_li:active{
+    background: #f2f2f2;
+}
+/*分页样式*/
+.paging{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    margin-top: 20px;
+    line-height: 40px;
+}
+.paging .pagnum{
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*遮罩样式*/
+.tan{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+.tan_kuang{
+    display: none;
+    z-index: 2;
+    position: absolute;
+    width: 80%;
+    /*height: 100px;*/
+    background: #f2f2f2;
+    top:20px;
+    left: -40%;
+    margin-left: 50%;
+    border-radius: 10px;
+    padding:0 10px 10px 10px ;
+
+    transition: all 0.5s;
+}
+.tan_img{
+    z-index: 3;
+    height: 90%;
+    background-size: cover;
+    background-position: center;
+    /*background-image: url("");*/
+}
+.tan_kuang>div{
+    display: flex;
+    /*height: 35px;*/
+    margin-top: 20px;
+}
+.tan_kuang>:last-child{
+    justify-content: center;
+}
+.tan_kuang .type{
+    float: left;
+    width: 80px;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: right;
+    color: #7f7f7f;
+    font-weight: bold;
+}
+.tan_kuang .value{
+    float: left;
+    flex: 1;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #7f7f7f;
+    font-weight: bold;
+    margin-left: 15px;
+    border: 1px #8f8f8f solid;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 10px;
+}
+.tan_kuang .close{
+
+}
+
+@media  screen and (max-width: 960px){
+    .table{
+        width: 98%;
+    }
+    .paging{
+        width: 98px;
+    }
+    .tan_kuang{
+        width: 98%;
+        left: -49%;
+    }
+}

@@ -1,0 +1,42 @@
+/*背景移动*/
+@keyframes zhezhao {
+    from{
+        background-position: left;
+    }
+    to{
+        background-position: right;
+    }
+}
+/*缩放*/
+@keyframes suo {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
+/*缩放*/
+@keyframes zuo {
+    0%{
+        margin-left: 5px;
+        border-right: 10px solid #f2f2f2;
+    }
+    100%{
+        margin-left: 25px;
+        border-right: 16px solid #f2f2f2;
+
+    }
+
+}
+/*明暗闪烁三次*/
+@keyframes shan {
+    from{
+        /*transform: scale(1.2);*/
+        opacity: 1;
+    }
+    to{
+        /*transform: scale(1);*/
+        opacity: 0;
+    }
+}

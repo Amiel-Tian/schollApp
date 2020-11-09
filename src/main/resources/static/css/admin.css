@@ -1,0 +1,83 @@
+body{
+	min-width: 320px;
+	display: flex;
+	flex-direction: column;
+	/*min-width: 1200px;*/
+}
+.header{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+
+	font-weight: bold;
+	background-color: #393D49;
+}
+.header a{
+	float: right;
+	color: orangered;
+	margin-right: 20px;
+}
+.header div{
+	float: left;
+	color: #f2f2f2;
+	margin-left: 20px;
+	cursor: pointer	;
+}
+.header div .sanjian{
+	width: 0;
+	height: 0;
+	border-top: 8px solid transparent;
+	/*border-left: 16px solid #f2f2f2;*/
+	border-right: 16px solid #f2f2f2;
+	border-bottom: 8px solid transparent;
+	display: inline-block;
+	margin-left: 10px;
+	/*animation: 0.5s zuo alternate infinite cubic-bezier(.14,.78,.89,.35);*/
+	animation: zuo 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000) infinite alternate;
+
+}
+.content{
+	flex: 1;
+	display: flex;
+}
+.content_title{
+	width: 200px;
+	height: 100%;
+	color: #f2f2f2;
+	transition: width 0.5s;
+}
+.content_title .title_li{
+	cursor: pointer;
+	text-align: center;
+	line-height: 40px;
+	margin-top: 20px;
+	font-weight: bold;
+
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.content_title .title_log{
+	position: absolute;
+	bottom: 0;
+	font-size: 12px;
+}
+.content_title .title_li:hover{
+	background: #7266BA;
+	color: #f2f2f2;
+}
+
+.iframe{
+	flex: 1;
+}
+
+/*
+适应手机端
+
+*/
+@media  screen and (max-width: 960px){
+	.content_title{
+		width: 0;
+		max-width: 85px;
+	}
+}
